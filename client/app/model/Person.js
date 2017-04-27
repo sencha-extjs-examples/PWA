@@ -21,8 +21,11 @@ Ext.define('PWA.model.Person', {
         { name: 'organization_id', reference: 'Organization' },
 
         // Calculated fields
-        { name: 'fullname', calculate: function (data) {
-            return data.firstname + ' ' + data.lastname;
-        }}
+        {
+            name: 'fullname',
+            calculate: function (data) {
+                return data.firstname + ' ' + data.lastname;
+            }
+        }
     ]
 });
