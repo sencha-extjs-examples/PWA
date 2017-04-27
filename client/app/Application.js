@@ -5,16 +5,7 @@
  */
 Ext.define('PWA.Application', {
     extend: 'Ext.app.Application',
-
     name: 'PWA',
-
-    stores: [
-        // TODO: add global / shared stores here
-    ],
-
-    launch: function () {
-
-    },
 
     profiles: [
         'Phone',
