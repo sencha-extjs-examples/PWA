@@ -1,0 +1,24 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "description": "This folder is primarily a container for the top-level pieces of the application. While you can remove some files and folders that this application does not use, be sure to read below before deciding what can be deleted and what needs to be kept in source control.",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base build/production/PWA --host 0.0.0.0 & sencha app build",
+    "precache": "pushd build/production/PWA; sw-precache --verbose --config=../../../sw-precache-config.json; popd;",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "escape-string-regexp": "^1.0.5",
+    "express": "^4.14.0",
+    "minimist": "^1.2.0",
+    "sw-precache": "^4.1.0"
+  }
+}

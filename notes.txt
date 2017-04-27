@@ -1,0 +1,24 @@
+"progressive": {
+    "manifest": {
+        "name": "Sencha",
+        "short_name": "Sencha Employee Directory",
+        "icons": [{
+            "src": "resources/icon-small.png",
+            "sizes": "96x96"
+        }, {
+            "src": "resources/icon-medium.png",
+            "sizes": "192x192"
+        }, {
+            "src": "resources/icon-large.png",
+            "sizes": "256x256"
+        }],
+        "theme_color": "#054059",
+        "background_color": "#054059",
+        "display": "standalone",
+        "orientation": "portrait",
+        "start_url": "/index.html"
+    }
+},
+
+// @sw-precache { urlPattern: "\\/portraits\\/.*", handler: "networkFirst", options: { cache: { name: "images", maxEntries: 100 } } }
+// @sw-precache { handler: "networkFirst", options: { cache: { name: "api" } } }
