@@ -1,9 +1,6 @@
 /**
  * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting causes an instance of this class to be created and
- * added to the Viewport container.
- *
- * TODO - Replace the content of this view to suit the needs of your application.
+ * "mainView" property.
  */
 Ext.define('PWA.view.main.Main', {
     extend: 'Ext.Container',
@@ -21,28 +18,25 @@ Ext.define('PWA.view.main.Main', {
     viewModel: 'main',
     layout: 'fit',
 
-    items: [
-        {
-            docked: 'top',
-            style: 'padding: 10px; background-color: red; color: white',
-            xtype: 'component',
-            html: 'OFFLINE MODE',
-            hidden: true,
-            bind: {
-                hidden: '{online}'
-            }
-        },
-        {
-            xtype: 'container',
-            reference: 'main',
-            layout: 'card',
-            items: [{
-                xtype: 'mainlist',
-                reference: 'list'
-            }, {
-                xtype: 'person',
-                reference: 'person'
-            }]
+    items: [{
+        docked: 'top',
+        style: 'padding: 10px; background-color: red; color: white',
+        xtype: 'component',
+        html: 'OFFLINE MODE',
+        hidden: true,
+        bind: {
+            hidden: '{online}'
         }
-    ]
+    }, {
+        xtype: 'container',
+        reference: 'main',
+        layout: 'card',
+        items: [{
+            xtype: 'mainlist',
+            reference: 'list'
+        }, {
+            xtype: 'person',
+            reference: 'person'
+        }]
+    }]
 });
