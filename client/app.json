@@ -1,17 +1,10 @@
 {
-    /**
-     * The application's namespace.
-     */
     "name": "PWA",
-
-    /**
-     * The version of the application.
-     */
     "version": "1.0.0.0",
+    "framework": "ext",
+    "toolkit": "modern",
+    "theme": "theme-material",
 
-    /**
-     * The relative path to the application's markup file (html, jsp, asp, etc.).
-     */
     "indexHtmlPath": "index.html",
 
     /**
@@ -34,26 +27,6 @@
     "overrides": [
         "overrides"
     ],
-
-    /**
-     * The Sencha Framework for this application: "ext" or "touch".
-     */
-    "framework": "ext",
-
-
-    /**
-     * The toolkit to use. Select either "classic" or "modern".
-     */
-    "toolkit": "modern",
-
-
-
-    /**
-     * The name of the theme for this application.
-     */
-
-    "theme": "theme-material",
-
 
     /**
      * The list of required packages (with optional versions; default is "latest").
@@ -84,14 +57,6 @@
      * Sass configuration properties.
      */
     "sass": {
-        /**
-         * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "PWA.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "PWA.view" then
-         * it would map to "sass/src/Foo.scss". To style classes outside the app's
-         * root namespace, change this to "". Doing so would change the mapping of
-         * "PWA.view.Foo" to "sass/src/PWA/view/Foo.scss".
-         */
         "namespace": "PWA",
 
         /**
@@ -108,7 +73,6 @@
          *      }
          *
          */
-
         "generated": {
             "var": "sass/save.scss",
             "src": "sass/save"
@@ -157,9 +121,7 @@
      *
      */
     "js": [
-        {
-            "path": "${framework.dir}/build/ext-modern-all-debug.js"
-        },
+        { "path": "${framework.dir}/build/ext-modern-all-debug.js" },
         {
             "path": "app.js",
             "bundle": true
@@ -333,14 +295,12 @@
      *      }
      *
      */
-
     "output": {
         "base": "${workspace.build.dir}/${build.environment}/${app.name}",
         "appCache": {
             "enable": false
         }
     },
-
 
     /**
     * Controls for localStorage caching
@@ -357,12 +317,10 @@
     *       "deltas": "deltas"
     *   }
     */
-
     "cache": {
         "enable": false,
         "deltas": true
     },
-
 
     /**
      * Used to automatically generate cache.manifest (HTML 5 application cache manifest)
@@ -403,23 +361,9 @@
      * generated inside this directory must be kept intact for proper generation of
      * deltas between updates.
      */
-
     "archivePath": "archive",
 
-
-
     "slicer": null,
-
-
-    /**
-     * Build Profiles. This object's properties are each a "build profile". You can
-     * add as many as you need to produce optimized builds for devices, themes, locales
-     * or other criteria. Your "Ext.beforeLoad" hook (see index.html) is responsible for
-     * selecting the desired build profile by setting "Ext.manifest" to one of these
-     * names.
-     *
-     */
-
 
     /**
      * File / directory name patttern to ignore when copying to the builds. Must be a
