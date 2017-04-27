@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "name": "PWA",
+  "short_name": "PWA",
+  "description": "Ext JS PWA Test",
+  "icons": [{
+    "src": "icon-small.png",
+    "sizes": "96x96"
+  }, {
+    "src": "icon-normal.png",
+    "sizes": "192x192"
+  }, {
+    "src": "icon-medium.png",
+    "sizes": "256x256"
+  }],
+  "splash_screens": [{
+    "src": "splash.png",
+    "sizes": "600x800"
+  }],
+  "theme_color": "#2ebd59",
+  "background_color": "#000",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "start_url": "../index.html"
+}

@@ -1,0 +1,115 @@
+$person-header-padding: 1em;
+$person-header-spacing: 1em;
+$person-header-picture-size: dynamic(150px);
+
+.person-header {
+    overflow: auto;
+    padding: $person-header-padding;
+    position: relative;
+    z-index: 1;
+
+    > .x-inner {
+        margin: auto;
+        max-width: $blocks-max-width;
+        padding: 0 $blocks-spacing;
+    }
+
+    .picture {
+        @include single-box-shadow($hoff: 0, $voff: 4px, $spread: -2px);
+        margin: 0 $person-header-spacing $person-header-spacing 0;
+        border: 8px solid $panel-header-background-color;
+        height: $person-header-picture-size;
+        width: $person-header-picture-size;
+
+        // decoration
+        &:before {
+            @include single-box-shadow;
+            background: $panel-header-background-color;
+            height: calc(#{$person-header-picture-size}*0.6 + #{$person-header-padding});
+            position: absolute;
+            display: block;
+            content: '';
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+
+    .person-name,
+    .person-title {
+        @include ellipsis();
+    }
+
+    .person-name {
+        font-size: 1.4em;
+    }
+
+    .person-title {
+        @include opacity(0.7);
+    }
+
+    .person-tools {
+        display: inline-block;
+        margin: 1em 0;
+
+        .x-button {
+            margin-right: 0.4em;
+        }
+    }
+
+    .person-extra {
+        @include border-radius;
+        //background-color: contrasted($background-color, 4%);
+        padding: 0.3em 0.6em;
+    }
+
+    .person-time,
+    .person-city {
+        @include opacity(0.7);
+        display: inline-block;
+        font-size: 0.85em;
+    }
+
+    .person-time::before {
+        content: '|';
+        margin: 0 0.25em;
+    }
+
+    .person-city {
+        font-weight: bold;
+    }
+
+    .tablet-profile & {
+        font-size: 1.2em;
+
+        .picture {
+            float: left;
+        }
+
+        .person-info {
+            display: table-cell;
+            height: $person-header-picture-size*0.6;
+            padding-bottom: $person-header-spacing;
+            vertical-align: bottom;
+        }
+
+        .person-tools {
+            float: left;
+        }
+
+        .person-extra {
+            margin-top: $person-header-spacing;
+            float: right;
+        }
+    }
+
+    .phone-profile & {
+        text-align: center;
+
+        .picture {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

@@ -1,0 +1,218 @@
+$panel-header-color: $panel-body-color;
+//$panel-header-background-color: contrast-color($panel-body-background-color, -5%);
+$panel-header-border-width: 0;
+$panel-header-font-weight: 400;
+
+// Application specific variables
+$picture-border-radius: dynamic(50%);
+$blocks-max-width: dynamic(1024px);
+$blocks-spacing: dynamic(1em);
+
+body.launching {
+    background-color: white;
+}
+
+body.launching #appLoadingIndicator {
+    display: block;
+}
+
+#appLoadingIndicator {
+    display: none;
+    position   : absolute;
+    top        : 50%;
+    text-align : center;
+    width      : 98%;
+    height     : 30px;
+}
+
+#appLoadingIndicator > * {
+    background-color                  : #1565C0;
+    display                           : inline-block;
+    height                            : 24px;
+    margin                            : 8px;
+    width                             : 24px;
+
+    -webkit-animation-name            : bounce;
+    -webkit-animation-duration        : 0.6s;
+    -webkit-animation-iteration-count : infinite;
+    -webkit-animation-direction       : normal;
+    -webkit-border-radius             : 16px;
+
+    border-radius                     : 16px;
+}
+
+#appLoadingIndicator > div:first-child {
+    -webkit-animation-delay : 0.1s;
+}
+
+#appLoadingIndicator > div:nth-child(2) {
+    -webkit-animation-delay : 0.2s;
+}
+
+#appLoadingIndicator > div:last-child {
+    -webkit-animation-delay : 0.3s;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+    }
+
+    50% {
+        background-color : #fff;
+    }
+
+    100% {
+    }
+}
+
+@mixin action-ui($ui, $background-color, $color) {
+    $ui-suffix: ui-suffix($ui);
+
+    .action#{$ui-suffix} {
+        background-color: $background-color;
+        color: $color;
+    }
+
+    .action#{$ui-suffix}-flat {
+        color: $background-color;
+    }
+
+    @include button-ui(
+        $ui: action#{$ui-suffix},
+        $background-color: $background-color,
+        $color: $color,
+        $border-radius: 25em,
+        $icon-size: 1.25em,
+        $icon-size-big: 1.5em,
+        $icon-font-size: 1.35em,
+        $icon-font-size-big: 1.5em,
+        $padding: 0.75em,
+        $padding-big: 0.8em
+    );
+}
+
+@include action-ui($ui: 'phone', $color: white, $background-color: #20C659);
+@include action-ui($ui: 'skype', $color: white, $background-color: #00AFF0);
+@include action-ui($ui: 'linkedin', $color: white, $background-color: #0077B5);
+@include action-ui($ui: 'email', $color: white, $background-color: #428C8A);
+@include action-ui($ui: 'profile', $color: white, $background-color: #89C8AE);
+@include action-ui($ui: 'remove', $color: white, $background-color: #FF1540);
+@include action-ui($ui: 'edit', $color: black, $background-color: #FFCC33);
+
+.picture {
+    @include border-radius(50%);
+    @include background-size(cover);
+    background-color: $neutral-color;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.picture {
+    height: 38px;
+    width: 38px;
+
+    &.large {
+        height: 48px;
+        width: 48px;
+    }
+}
+
+.blocks {
+    margin: 0 auto;
+    max-width: $blocks-max-width;
+    position: relative;
+
+    .tablet-profile & {
+        padding: $blocks-spacing/2;
+
+        .x-panel-block {
+            margin: $blocks-spacing/2;
+        }
+
+        > .x-inner {
+            display: flex;
+            flex-direction: row;
+
+            > .blocks-column:nth-child(1) {
+                flex: 1 1 0;
+            }
+
+            > .blocks-column:nth-child(2) {
+                width: 35%;
+
+                @media screen and (max-width: 800px) {
+                    width: 45%;
+                }
+                @media screen and (max-width: 600px) {
+                    width: 100%
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .phone-profile & {
+        padding: $blocks-spacing/2;
+
+        .x-panel-block {
+            margin: $blocks-spacing/2;
+        }
+    }
+}
+
+.block-section {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.5em;
+    padding: 0.5em;
+
+    .item {
+        padding: 0.5em;
+
+        .value,
+        .extra {
+            display: inline-block;
+        }
+
+        .label {
+            color: lighten($color, 20%);
+            font-weight: 100;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .extra {
+            font-weight: bold;
+            margin-left: 0.5em;
+        }
+    }
+
+    .phone-profile & {
+        font-size: 0.9em;
+    }
+}
+
+@include panel-ui(
+    $ui: 'block',
+    $body-background-color: $neutral-light-color,
+    $header-background-color: $neutral-light-color,
+    $header-color: $color,
+    $header-font-weight: 100,
+    $header-icon-size: 2em,
+    $header-icon-size-big: 2em,
+    $header-icon-font-size: 1em,
+    $header-icon-font-size-big: 1.35em,
+    $header-font-size: 1.4em,
+    $header-font-size-big: 1.25em,
+    $header-line-height: 1em,
+    $header-line-height-big: 1em
+);
+
+@include panel-ui(
+    $ui: 'dark-header',
+    $header-background-color: #444444,
+    $header-color: $neutral-light-color
+);
