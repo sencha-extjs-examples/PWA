@@ -40,7 +40,6 @@ Ext.define('PWA.view.person.Person', {
     }],
 
     updateRecord: function(record) {
-        alert(record);
         this.getViewModel().set('record', record);
     }
 });
