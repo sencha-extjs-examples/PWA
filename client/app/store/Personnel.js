@@ -1,6 +1,5 @@
 Ext.define('PWA.store.Personnel', {
     extend: 'Ext.data.Store',
-
     alias: 'store.personnel',
 
     model: 'PWA.model.Person',
@@ -18,5 +17,4 @@ Ext.define('PWA.store.Personnel', {
             type: 'json'
         }
     }
-
 });
