@@ -4,8 +4,6 @@ Ext.define('PWA.store.Personnel', {
 
     model: 'PWA.model.Person',
 
-    autoLoad: true,
-
     proxy: {
         type: 'ajax',
 
@@ -16,5 +14,17 @@ Ext.define('PWA.store.Personnel', {
         reader: {
             type: 'json'
         }
-    }
+    },
+
+    grouper: {
+        groupFn: function(record) {
+            return record.get('lastname')[0];
+        }
+    },
+
+    sorters: [{
+        property: 'lastname'
+    }, {
+        property: 'firstname'
+    }]
 });

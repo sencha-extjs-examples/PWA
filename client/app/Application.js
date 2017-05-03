@@ -7,6 +7,12 @@ Ext.define('PWA.Application', {
     extend: 'Ext.app.Application',
     name: 'PWA',
 
+    defaultToken: 'home',
+
+    router: {
+        hashbang: true
+    },
+
     profiles: [
         'Phone',
         'Tablet'

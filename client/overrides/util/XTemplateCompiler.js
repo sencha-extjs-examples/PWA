@@ -7,6 +7,7 @@ Ext.define('App.overrides.util.XTemplateCompiler', {
      */
     doExpr: function (expr) {
         var out = this.body;
+
         out.push('if ((v=' + expr + ') != null) out');
 
         if (this.useIndex) {
