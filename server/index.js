@@ -1,11 +1,21 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+const express = require('express');
+const app = express();
+const path = require('path');
+const ENV = process.env.ENV;
+const port = 8082;
+
+let clientPath = path.join(__dirname, '../client');
+
+if (/^prod/i.test(ENV)) {
+    clientPath = path.join(clientPath, '/build/production/PWA');
+} else if (/^test/i.test(ENV)) {
+    clientPath = path.join(clientPath, '/build/testing/PWA');
+}
 
 app.use(express.static(path.join(__dirname, 'api')));
-app.use(express.static(path.join(__dirname, '../client/build/production/PWA')));
-// app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(clientPath));
 
-app.listen(8082, '0.0.0.0', function () {
-  console.log('App listening on port 8082!');
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+    console.log(`Client app will be loaded from ${clientPath}`);
 });

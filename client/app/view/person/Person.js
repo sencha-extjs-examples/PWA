@@ -1,5 +1,5 @@
 Ext.define('PWA.view.person.Person', {
-    extend: 'Ext.Panel',
+    extend: 'Ext.Container',
     xtype: 'person',
 
     requires: [
@@ -12,21 +12,7 @@ Ext.define('PWA.view.person.Person', {
         type: 'person'
     },
 
-    baseCls: 'person',
-    title: 'Profile',
-
-    header: {
-        ui: 'dark-header',
-        items: {
-            ui: 'dark flat large',
-            xtype: 'button',
-            docked: 'left',
-            iconCls: 'x-fa fa-chevron-left',
-            handler: 'onBackTap',
-            margin: '0 5 0 0'
-        }
-    },
-
+    cls: 'person',
     scrollable: true,
 
     items: [{

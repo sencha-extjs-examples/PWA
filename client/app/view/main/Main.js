@@ -3,7 +3,7 @@
  * "mainView" property.
  */
 Ext.define('PWA.view.main.Main', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'app-main',
 
     requires: [
@@ -13,10 +13,40 @@ Ext.define('PWA.view.main.Main', {
         'PWA.view.main.MainController',
         'PWA.view.main.MainModel'
     ],
- 
+
     controller: 'main',
     viewModel: 'main',
-    layout: 'fit',
+
+    layout: {
+        type: 'card',
+        animation: {
+            type: 'slide'
+        }
+    },
+
+    header: {
+        ui: 'dark-header',
+        title: {
+            bind: {
+                margin: '{title === "Profile" ? "0 0 0 5" : "0 0 0 20"}'
+            }
+        },
+        items: [{
+            xtype: 'button',
+            ui: 'dark flat large',
+            docked: 'left',
+            iconCls: 'x-fa fa-chevron-left',
+            handler: 'onBackTap',
+            hidden: true,
+            bind: {
+                hidden: '{title !== "Profile"}'
+            }
+        }]
+    },
+
+    bind: {
+        title: '{title}'
+    },
 
     items: [{
         docked: 'top',
@@ -28,15 +58,10 @@ Ext.define('PWA.view.main.Main', {
             hidden: '{online}'
         }
     }, {
-        xtype: 'container',
-        reference: 'main',
-        layout: 'card',
-        items: [{
-            xtype: 'mainlist',
-            reference: 'list'
-        }, {
-            xtype: 'person',
-            reference: 'person'
-        }]
+        xtype: 'mainlist',
+        reference: 'list'
+    }, {
+        xtype: 'person',
+        reference: 'person'
     }]
 });

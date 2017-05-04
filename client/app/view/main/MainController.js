@@ -22,44 +22,85 @@ Ext.define('PWA.view.main.MainController', {
         }
     },
 
+    routes: {
+        'home': 'showList',
+        'person/:id': {
+            before: 'waitForStore',
+            action: 'showPerson'
+        }
+    },
+
     initViewModel: function() {
+        Ext.getWin().on({
+            scope: this,
+            offline: 'onOffline',
+            online: 'onOnline'
+        });
+    },
+
+    onOffline: function () {
         var vm = this.getViewModel();
 
-        window.addEventListener("online", function() {
-            vm.set('online', true);
-            vm.getStore('personnel').reload();
-        });
+        vm.set('online', false);
+    },
 
-        window.addEventListener("offline", function() {
-            vm.set('online', false);
-        });
+    onOnline: function () {
+        var vm = this.getViewModel();
+
+        vm.set('online', true);
+
+        vm.get('personnel').reload();
     },
 
     onItemSelected: function (sender, index, target, record) {
-        this.showPerson(record.data);
+        this.redirectTo('person/' + record.getId());
     },
 
-    onRefresh: function() {
-        this.getStore('personnel').reload();
+    waitForStore: function () {
+        var view = this.getView(),
+            vm = view.getViewModel(),
+            store = vm.get('personnel');
+
+        return new Ext.Promise(function (resolve, reject) {
+            if (store.isLoaded()) {
+                resolve();
+            } else {
+                store.on('load', resolve, this, { single: true });
+            }
+        });
     },
 
-    showPerson: function(person) {
-        var main = this.lookup('main');
-        var view = this.lookup('person');
-        var vm = view.getViewModel();
+    showPerson: function(id) {
+        var view = this.getView(),
+            list = this.lookup('person'),
+            viewVm = view.getViewModel(),
+            personVm = list.getViewModel(),
+            store = viewVm.get('personnel'),
+            record = store.getById(id);
 
-        person = Ext.create('PWA.model.Person', person);
+        viewVm.set({
+            title: 'Profile'
+        });
 
-        vm.set({ record: person });
+        personVm.set({
+            record: Ext.create('PWA.model.Person', record.data)
+        });
 
-        vm.notify();
-
-        main.setActiveItem(view);
+        view.setActiveItem(list);
     },
 
     showList: function() {
-        var main = this.lookup('main');
+        var view = this.getView(),
+            vm = view.getViewModel();
 
-        main.setActiveItem(0);
-    }
+        vm.set({
+            title: 'Employee Directory'
+        });
+
+        view.setActiveItem(0);
+    },
+
+    onBackTap: function() {
+        this.redirectTo(-1);
+    },
 });
