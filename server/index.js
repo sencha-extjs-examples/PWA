@@ -1,8 +1,26 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const fs = require('fs');
+const https = require('https');
+const certPath = path.join(__dirname, 'certs');
 const ENV = process.env.ENV;
-const port = 8082;
+const app = express();
+const ports = {
+    http: 8082,
+    https: 8083
+};
+
+let server;
+
+try {
+    const crt = fs.readFileSync(path.join(certPath, 'server.crt'));
+    const key = fs.readFileSync(path.join(certPath, 'server.key'));
+
+    server = https.createServer({
+        cert: crt,
+        key: key
+    }, app);
+} catch (e) {}
 
 let clientPath = path.join(__dirname, '../client');
 
@@ -15,7 +33,14 @@ if (/^prod/i.test(ENV)) {
 app.use(express.static(path.join(__dirname, 'api')));
 app.use(express.static(clientPath));
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-    console.log(`Client app will be loaded from ${clientPath}`);
+console.log(`Client app will be loaded from ${clientPath}`);
+
+app.listen(ports.http, () => {
+    console.log(`Non-Secure Server listening on port ${ports.http}`);
 });
+
+if (server) {
+    server.listen(ports.https, () => {
+        console.log(`Secure Server listening on port ${ports.https}`);
+    });
+}
