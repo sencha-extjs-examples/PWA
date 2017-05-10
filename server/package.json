@@ -1,0 +1,16 @@
+{
+  "name": "sencha-pwa-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ssl": "openssl req -nodes -x509 -newkey rsa:2048 -keyout certs/server.key -out certs/server.crt -days 365",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

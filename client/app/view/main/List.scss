@@ -1,0 +1,98 @@
+@include itemheader-ui(
+    $ui: 'cards',
+    $background-color: transparent,
+    $font-size: 1.4em,
+    $font-size-big: 1.4em
+);
+
+@include listitem-ui(
+    $ui: 'cards',
+    $border-style: none,
+    $background-color: transparent,
+    $hovered-background-color: transparent,
+    $pressed-background-color: transparent,
+    $selected-background-color: transparent,
+    $padding: 0,
+    $padding-big: 0
+);
+
+.home-events {
+    .x-listitem-cards {
+        padding: 0.5em;
+
+        > .x-listitem-body-el {
+            background-color: $neutral-light-color;
+        }
+
+        .tablet-profile & {
+            @media screen and (max-width: 800px) {
+                width: 100%
+            }
+        }
+
+        .phone-profile.x-portrait & {
+            width: 100%;
+        }
+
+        .badge {
+            @include border-radius(4em);
+            background-color: $neutral-highlight-color;
+            color: $neutral-dark-color;
+            display: inline-block;
+            font-size: 0.9em;
+            margin: 1em 0 0 1em;
+            padding: 0.45em 1.2em;
+
+            .date, .title {
+                display: inline-block;
+            }
+
+            .date {
+                font-weight: bold;
+            }
+
+            .title {
+                &:before {
+                    content: '|';
+                    margin: 0 0.5em
+                }
+            }
+
+            &.event-birthday {
+                background-color: $base-light-color;
+                color: $base-dark-color;
+            }
+
+            &.event-ended {
+                background-color: $neutral-light-color;
+                border: 1px solid $neutral-color;
+                color: $neutral-dark-color;
+            }
+        }
+
+        .content {
+            display: flex;
+            align-items: stretch;
+            flex-direction: row;
+            padding: 1.15em;
+        }
+
+        .picture {
+            margin-right: 1em;
+        }
+
+        .event-title {
+            color: $base-color;
+        }
+
+        .person-name,
+        .person-title {
+            @include ellipsis;
+        }
+
+        .person-name {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    }
+}
