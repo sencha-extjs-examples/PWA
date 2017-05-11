@@ -16,6 +16,8 @@ Once Ext JS is extracted, run these commands:
     npm install
     npm start
 
+On Windows the "~" part of the path will be replaced by something like "C:\Users\Me\".
+
 You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
 
 ## Run Production Build
