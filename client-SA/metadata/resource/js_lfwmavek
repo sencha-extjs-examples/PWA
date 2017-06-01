@@ -1,0 +1,20 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js_lfwmavek",
+        "includeInBundle": true,
+        "url": "resources/Profiles.js"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "includeInBundle": "boolean",
+        "url": "uri"
+    },
+    "name": "js",
+    "designerId": "661f989d-ce21-47ed-b042-46cbd08e031a"
+}

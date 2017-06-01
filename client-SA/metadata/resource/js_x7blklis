@@ -1,0 +1,20 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js_x7blklis",
+        "includeInBundle": true,
+        "url": "overrides/Overrides.js"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "includeInBundle": "boolean",
+        "url": "uri"
+    },
+    "name": "js",
+    "designerId": "e017921a-119a-4125-ab9d-dbb8db617807"
+}

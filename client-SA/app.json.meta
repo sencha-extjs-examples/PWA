@@ -1,0 +1,1 @@
+{"_comment":"Please don't edit. This is Architect data.","name":"PWA","resources":[],"requires":[],"theme":"theme-material-8bca774c-ec30-4878-9ac3-a031acb93800","classpath":"${app.dir}/app,${app.dir}/overrides/,${app.dir}/resources/","css":[],"js":[{"path":"overrides/Overrides.js","includeInBundle":true},{"path":"resources/Profiles.js","includeInBundle":true}]}

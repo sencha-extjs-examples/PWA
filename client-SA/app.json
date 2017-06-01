@@ -1,0 +1,126 @@
+{
+   "name": "PWA",
+   "version": "1.0.0.0",
+   "framework": "ext",
+   "toolkit": "modern",
+   "theme": "theme-material-8bca774c-ec30-4878-9ac3-a031acb93800",
+   "requires": [
+      "font-awesome"
+   ],
+   "indexHtmlPath": "index.html",
+   "classpath": "${app.dir}/app,${app.dir}/overrides/,${app.dir}/resources/",
+   "overrides": [
+      "overrides"
+   ],
+   "fashion": {
+      "inliner": {
+         "enable": false
+      }
+   },
+   "sass": {
+      "namespace": "PWA",
+      "generated": {
+         "var": "sass/save.scss",
+         "src": "sass/save"
+      },
+      "etc": [
+         "sass/etc/all.scss"
+      ],
+      "var": [
+         "sass/var/all.scss",
+         "sass/var"
+      ],
+      "src": [
+         "sass/src"
+      ]
+   },
+   "js": [
+      {
+         "path": "${framework.dir}/build/ext-modern-all-debug.js"
+      },
+      {
+         "path": "overrides/Overrides.js",
+         "includeInBundle": true
+      },
+      {
+         "path": "resources/Profiles.js",
+         "includeInBundle": true
+      },
+      {
+         "path": "app.js",
+         "bundle": true
+      }
+   ],
+   "css": [
+      {
+         "path": "${build.out.css.path}",
+         "bundle": true,
+         "exclude": [
+            "fashion"
+         ]
+      }
+   ],
+   "loader": {
+      "cache": false,
+      "cacheParam": "_dc"
+   },
+   "production": {
+      "output": {
+         "appCache": {
+            "enable": true,
+            "path": "cache.appcache"
+         }
+      },
+      "loader": {
+         "cache": "${build.timestamp}"
+      },
+      "cache": {
+         "enable": true
+      },
+      "compressor": {
+         "type": "yui"
+      }
+   },
+   "testing": {},
+   "development": {
+      "watch": {
+         "delay": 250
+      }
+   },
+   "bootstrap": {
+      "base": "${app.dir}",
+      "microloader": "bootstrap.js",
+      "css": "bootstrap.css"
+   },
+   "output": {
+      "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+      "appCache": {
+         "enable": false
+      }
+   },
+   "cache": {
+      "enable": false,
+      "deltas": true
+   },
+   "appCache": {
+      "cache": [
+         "index.html"
+      ],
+      "network": [
+         "*"
+      ],
+      "fallback": []
+   },
+   "resources": [
+      {
+         "path": "resources",
+         "output": "shared"
+      }
+   ],
+   "archivePath": "archive",
+   "slicer": null,
+   "ignore": [
+      "(^|/)CVS(/?$|/.*?$)"
+   ],
+   "id": "b6567d52-062c-4675-922a-ec91510fa546"
+}

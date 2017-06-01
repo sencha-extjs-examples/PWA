@@ -1,0 +1,21 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{record: null}"
+        ],
+        "designer|userAlias": "person.person",
+        "designer|userClassName": "person.PersonViewModel"
+    },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "99865cf8-aa6c-4eb2-8c24-f3f10f1b073b"
+}

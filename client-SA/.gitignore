@@ -1,0 +1,8 @@
+/build
+build/
+ext/
+bootstrap.*
+classic.json*
+modern.json*
+.sencha
+.arch-internal-preview.css

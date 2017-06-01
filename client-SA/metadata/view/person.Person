@@ -1,0 +1,93 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "person"
+        ],
+        "designer|userAlias": "person.person",
+        "designer|userClassName": "person.Person",
+        "scrollable": true
+    },
+    "configAlternates": {
+        "scrollable": "auto",
+        "cls": "typedarray",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyContainer",
+    "designerId": "76f813d8-6ad2-4cde-af69-dc1bcabc46d4",
+    "viewControllerInstanceId": "96859808-00d7-49e7-ae77-adf00844e27e",
+    "viewModelInstanceId": "99865cf8-aa6c-4eb2-8c24-f3f10f1b073b",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "person.header",
+            "designerId": "a7d23919-bda8-4a45-9537-8ee0a2075148",
+            "masterInstanceId": "63f7cbe3-7370-4e21-ac5b-d61fe59ffde6"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "block",
+                "record": [
+                    "{record}"
+                ],
+                "ui": "block"
+            },
+            "configAlternates": {
+                "record": "binding",
+                "designer|uiInterfaceName": "string",
+                "ui": "string"
+            },
+            "name": "person.details",
+            "designerId": "f078304a-1a8e-4a95-a315-c9fc858efc2b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "record",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "93feda61-daa6-4cb0-8140-aedec4158591"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "updateRecord",
+                "implHandler": [
+                    "this.getViewModel().set('record', record);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "updateRecord",
+            "designerId": "88e896d2-f2a3-40e9-89b0-c163d2cf87fc"
+        }
+    ]
+}

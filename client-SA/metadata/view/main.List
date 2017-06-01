@@ -1,0 +1,137 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "main.list",
+        "designer|userClassName": "main.List",
+        "grouped": true,
+        "infinite": true,
+        "itemConfig": [
+            "{",
+            "    ui: 'cards',",
+            "    header: {",
+            "        ui: 'cards'",
+            "    }",
+            "}"
+        ],
+        "store": "Personnel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "grouped": "boolean",
+        "infinite": "boolean",
+        "store": "store",
+        "itemConfig": "object"
+    },
+    "name": "MyList",
+    "designerId": "ef30c3a5-0335-4f06-843d-666dc38e4b16",
+    "viewControllerInstanceId": "9e986786-43b1-480d-84e2-9083678fb9c5",
+    "viewModelInstanceId": "24d372ae-689c-4b10-92ee-59596037fee7",
+    "cn": [
+        {
+            "type": "Ext.dataview.pullrefresh.PullRefresh",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "pullText": "Pull down to refresh"
+            },
+            "configAlternates": {
+                "pullText": "string"
+            },
+            "name": "MyPullRefreshPlugin",
+            "designerId": "46396d92-764e-4a1b-80dc-f96ac0633d67"
+        },
+        {
+            "type": "Ext.dataview.IndexBar",
+            "reference": {
+                "name": "indexBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "platformConfigs": [
+                    "{",
+                    "    desktop: {",
+                    "        autoHide: true",
+                    "    },",
+                    "    '!desktop': {",
+                    "        autoHide: false",
+                    "    }",
+                    "}         "
+                ]
+            },
+            "configAlternates": {
+                "platformConfigs": "object"
+            },
+            "name": "MyIndexBar",
+            "designerId": "c5959994-48ef-4c0a-ae94-0ad70f284aea",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "platformConfigs",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div class=\"item-wrapper\"> ",
+                    "    <div class=\"content\"> ",
+                    "        <div class=\"picture large\" style=\"background-image:url({picture})\"></div> ",
+                    "        <div class=\"details\"> ",
+                    "            <div class=\"person-name\">{firstname} {lastname}</div> ",
+                    "            <div class=\"person-title\">{title}</div> ",
+                    "        </div> ",
+                    "    </div> ",
+                    "</div>"
+                ]
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "implHandler": "code"
+            },
+            "name": "itemTpl",
+            "designerId": "4d6e4da9-acbc-4b2a-b6cf-1f40646bfe20"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListChildtap",
+                "implHandler": [
+                    " this.redirectTo('person/' + location.record.getId());"
+                ],
+                "name": "childtap",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onListChildtap",
+            "designerId": "952ec23b-4554-4d44-90c4-cd652b42ac27"
+        }
+    ]
+}
