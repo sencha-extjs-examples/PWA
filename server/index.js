@@ -23,6 +23,7 @@ try {
 } catch (e) {}
 
 let clientPath = path.join(__dirname, '../client');
+// let clientPath = path.join(__dirname, '../client-SA');
 
 if (/^prod/i.test(ENV)) {
     clientPath = path.join(clientPath, '/build/production/PWA');

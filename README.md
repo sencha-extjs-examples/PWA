@@ -20,6 +20,26 @@ On Windows the "~" part of the path will be replaced by something like "C:\Users
 
 You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
 
+## To run with Sencha Architect
+You will need to install [Sencha Architect 4.2](https://www.sencha.com/products/architect/).
+
+- Open the PWA.xds file located in `client-SA` folder in SA.
+- Go to Project Settings -> Framework -> click on Reinitialize Cmd.
+    - Or before opening the project copy / install ext framework to the `client-SA` folder. `sencha app install ~/sencha-sdks`
+- Save the project (This will automatically build your project).
+
+
+- Edit the file `server/index.js` change the client path to `'../client-SA'` from `'../client'`
+- Open the terminal in the root folder: 
+
+
+    cd server
+    npm install
+    npm start
+
+You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
+
+
 ## Run Production Build
 
 To run a production build, run these commands:
