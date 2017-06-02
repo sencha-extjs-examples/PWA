@@ -20,6 +20,8 @@ On Windows the "~" part of the path will be replaced by something like "C:\Users
 
 You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
 
+**Note:** *Caching are possible only in uses the production build of your app. [More info here](http://docs.sencha.com/cmd/guides/progressive_web_apps.html#progressive_web_apps_-_example_limiting_the_number_of_cached_responses_for_an_api_call).*
+
 ## Run Production Build
 
 To run a production build, run these commands:
@@ -27,7 +29,7 @@ To run a production build, run these commands:
     cd client
     sencha app build
     cd ../server
-    NODE_ENV=production npm start
+    ENV=production npm start
 
 This will run a production build and start the server with a path to the production build.
 You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
