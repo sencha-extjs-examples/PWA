@@ -20,7 +20,7 @@ On Windows the "~" part of the path will be replaced by something like "C:\Users
 
 You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
 
-**Note:** *Caching are possible only in uses the production build of your app. [More info here](http://docs.sencha.com/cmd/guides/progressive_web_apps.html#progressive_web_apps_-_example_limiting_the_number_of_cached_responses_for_an_api_call).*
+**Note:** *The service-worker is only included in the production build. [More info here](http://docs.sencha.com/cmd/guides/progressive_web_apps.html#progressive_web_apps_-_example_limiting_the_number_of_cached_responses_for_an_api_call).*
 
 ## Run Production Build
 
