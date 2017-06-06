@@ -29,6 +29,7 @@ Ext.define('PWA.view.main.List', {
     viewModel: {
         type: 'main.list'
     },
+    cls: 'home-events',
     itemTpl: [
         '<div class="item-wrapper"> ',
         '    <div class="content"> ',
@@ -40,6 +41,7 @@ Ext.define('PWA.view.main.List', {
         '    </div> ',
         '</div>'
     ],
+    loadingText: '',
     store: 'Personnel',
     itemConfig: {
         ui: 'cards',

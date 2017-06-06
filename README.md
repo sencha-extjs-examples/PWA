@@ -31,11 +31,11 @@ You will need to install [Sencha Architect 4.2](https://www.sencha.com/products/
 
 - Edit the file `server/index.js` change the client path to `'../client-SA'` from `'../client'`
 - Open the terminal in the root folder: 
-
-
+```
     cd server
     npm install
     npm start
+```
 
 You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
 

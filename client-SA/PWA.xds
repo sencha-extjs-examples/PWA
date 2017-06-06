@@ -7,7 +7,7 @@
             "frameworkVersion": "6.5.0.775"
         },
         "urlPrefixTemplate": "http://localhost:{port}",
-        "urlPrefix": "http://localhost:60408",
+        "urlPrefix": "http://localhost:56089",
         "canvasControls": {
             "viewportSize": {
                 "name": "iPhone",
@@ -33,7 +33,7 @@
         "installStatus": "Not Installed"
     },
     "xdsVersion": "4.2.0",
-    "xdsBuild": 166,
+    "xdsBuild": 205,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",

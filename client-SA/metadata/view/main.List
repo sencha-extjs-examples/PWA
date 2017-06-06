@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "cls": [
+            "home-events"
+        ],
         "designer|userAlias": "main.list",
         "designer|userClassName": "main.List",
         "grouped": true,
@@ -18,6 +21,7 @@
             "    }",
             "}"
         ],
+        "loadingText": "",
         "store": "Personnel"
     },
     "configAlternates": {
@@ -26,7 +30,9 @@
         "grouped": "boolean",
         "infinite": "boolean",
         "store": "store",
-        "itemConfig": "object"
+        "itemConfig": "object",
+        "cls": "typedarray",
+        "loadingText": "string"
     },
     "name": "MyList",
     "designerId": "ef30c3a5-0335-4f06-843d-666dc38e4b16",
