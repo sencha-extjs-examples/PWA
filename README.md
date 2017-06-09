@@ -39,6 +39,7 @@ You will need to install [Sencha Architect 4.2](https://www.sencha.com/products/
 
 You should now be able to point your browser to [http://localhost:8082/](http://localhost:8082/).
 
+With Sencha Architect you will need to use [serviceWorker](http://docs.sencha.com/cmd/guides/progressive_web_apps.html#progressive_web_apps_-_the_serviceworker_config) config defined inside app.json instead of inline @sw-cache comments.
 
 ## Run Production Build
 
