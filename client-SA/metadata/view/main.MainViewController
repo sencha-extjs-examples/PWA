@@ -1,0 +1,222 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "main.main",
+        "designer|userClassName": "main.MainViewController",
+        "listen": [
+            "{",
+            "    controller: {",
+            "        '*': {",
+            "            'home': 'showList'",
+            "        }",
+            "    }",
+            "}"
+        ]
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "listen": "object"
+    },
+    "designerId": "c234cb33-f52c-41f3-933b-8ce6c91a4587",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initViewModel",
+                "implHandler": [
+                    "Ext.getWin().on({",
+                    "    scope: this,",
+                    "    offline: 'onOffline',",
+                    "    online: 'onOnline'",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "initViewModel",
+            "designerId": "407ec723-53a8-44e7-95e3-bf308597f831"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOffline",
+                "implHandler": [
+                    "var vm = this.getViewModel();",
+                    "",
+                    "vm.set('online', false);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onOffline",
+            "designerId": "d9613d21-cac1-4fb9-a88c-d6b067fdb76e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOnline",
+                "implHandler": [
+                    "var vm = this.getViewModel();",
+                    "",
+                    "vm.set('online', true);",
+                    "",
+                    "vm.get('personnel').reload();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onOnline",
+            "designerId": "1e915b05-af44-4f4b-9820-9de54fa7784a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "waitForStore",
+                "implHandler": [
+                    "var view = this.getView(),",
+                    "    vm = view.getViewModel(),",
+                    "    store = vm.get('personnel');",
+                    "",
+                    "return new Ext.Promise(function (resolve, reject) {",
+                    "    if (store.isLoaded()) {",
+                    "        resolve();",
+                    "    } else {",
+                    "        store.on('load', resolve, this, { single: true });",
+                    "    }",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "waitForStore",
+            "designerId": "55cd4470-8595-467d-bdf9-e2f4056d7fad"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onBackTap",
+                "implHandler": [
+                    "this.redirectTo(-1);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onBackTap",
+            "designerId": "f9f59487-551c-48cc-9e95-b95d65df3b70"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showList",
+                "implHandler": [
+                    "var view = this.getView(),",
+                    "    vm = view.getViewModel();",
+                    "",
+                    "vm.set({",
+                    "    title: 'Employee Directory'",
+                    "});",
+                    "",
+                    "view.setActiveItem(0);"
+                ],
+                "url": "home"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showList",
+            "designerId": "36d82d9d-33de-4e01-9ab1-703b0af0c41f"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "showPerson",
+                "implHandler": [
+                    "",
+                    "this.waitForStore().then( () => {",
+                    "    var view = this.getView(),",
+                    "    list = this.lookup('person'),",
+                    "    viewVm = view.getViewModel(),",
+                    "    personVm = list.getViewModel(),",
+                    "    store = viewVm.get('personnel'),",
+                    "    record = store.getById(id);",
+                    "",
+                    "    viewVm.set({",
+                    "        title: 'Profile'",
+                    "    });",
+                    "",
+                    "    personVm.set({",
+                    "        record: Ext.create('PWA.model.Person', record.data)",
+                    "    });",
+                    "",
+                    "    view.setActiveItem(list);     ",
+                    "});"
+                ],
+                "url": "person/:id"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showPerson",
+            "designerId": "d2fefbfb-b949-4b46-85ef-0b33c106a99b"
+        }
+    ]
+}

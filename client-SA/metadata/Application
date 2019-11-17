@@ -1,0 +1,59 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultToken": "home",
+        "models": [
+            "Person"
+        ],
+        "name": "PWA",
+        "profiles": [
+            "[",
+            "'Phone',",
+            "'Tablet'",
+            "]"
+        ],
+        "router": [
+            "{",
+            "hashbang: true",
+            "}"
+        ],
+        "stores": [
+            "Personnel"
+        ],
+        "views": [
+            "main.Main",
+            "main.List",
+            "person.Person",
+            "person.Details",
+            "person.Header"
+        ]
+    },
+    "configAlternates": {
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray",
+        "router": "object",
+        "profiles": "array",
+        "defaultToken": "string"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "router",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "profiles",
+            "type": "string"
+        }
+    ]
+}

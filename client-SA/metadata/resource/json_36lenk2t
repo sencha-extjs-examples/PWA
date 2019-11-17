@@ -1,0 +1,18 @@
+{
+    "type": "jsonresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "json_36lenk2t",
+        "url": "resources/manifest.json"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "url": "uri"
+    },
+    "name": "json",
+    "designerId": "ff0507aa-eeae-4082-82d2-3189809fbf9b"
+}

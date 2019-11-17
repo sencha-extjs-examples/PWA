@@ -1,0 +1,76 @@
+{
+    "name": "PWA",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.0.180",
+            "frameworkVersion": "6.5.0.775"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}",
+        "urlPrefix": "http://localhost:56089",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone",
+                "builtIn": true,
+                "height": 480,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": false,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        },
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "4.2.0",
+    "xdsBuild": 205,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "modern65",
+    "viewOrderMap": {
+        "view": [
+            "bb093cf2-6a30-4a44-b35e-403d23427192",
+            "939b8a38-d936-49d9-b7c0-5ca3c50c62af",
+            "c234cb33-f52c-41f3-933b-8ce6c91a4587",
+            "ef30c3a5-0335-4f06-843d-666dc38e4b16",
+            "24d372ae-689c-4b10-92ee-59596037fee7",
+            "9e986786-43b1-480d-84e2-9083678fb9c5",
+            "76f813d8-6ad2-4cde-af69-dc1bcabc46d4",
+            "99865cf8-aa6c-4eb2-8c24-f3f10f1b073b",
+            "96859808-00d7-49e7-ae77-adf00844e27e",
+            "93feda61-daa6-4cb0-8140-aedec4158591",
+            "119db1ed-90e4-44f2-8127-442a82dc1ca9",
+            "fd92c6bd-2290-41f0-85a0-e7e088376704",
+            "63f7cbe3-7370-4e21-ac5b-d61fe59ffde6",
+            "189841cb-35db-4ef7-a0e9-105c74ac2b18",
+            "2782f9f0-465b-4eb5-98b0-76e35cbd2f70"
+        ],
+        "store": [
+            "c602e908-1801-4d1c-9f54-f52e3d516dd2"
+        ],
+        "controller": [],
+        "model": [
+            "3256e49c-81e4-4ad3-83a4-c8173baeebef"
+        ],
+        "resource": [
+            "997861c7-e3ca-4867-b5b5-faf6a41aaa73",
+            "8bca774c-ec30-4878-9ac3-a031acb93800",
+            "ff0507aa-eeae-4082-82d2-3189809fbf9b",
+            "e017921a-119a-4125-ab9d-dbb8db617807",
+            "661f989d-ce21-47ed-b042-46cbd08e031a"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

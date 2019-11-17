@@ -52,8 +52,8 @@ Ext.define('PWA.view.main.MainController', {
         vm.get('personnel').reload();
     },
 
-    onItemSelected: function (sender, index, target, record) {
-        this.redirectTo('person/' + record.getId());
+    onItemSelected: function (sender, location) {
+        this.redirectTo('person/' + location.record.getId());
     },
 
     waitForStore: function () {

@@ -1,0 +1,399 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "person-header"
+        ],
+        "designer|commentHeader": [
+            "TODO: Bind time in personel-extra"
+        ],
+        "designer|userAlias": "person.header",
+        "designer|userClassName": "person.Header"
+    },
+    "configAlternates": {
+        "cls": "typedarray",
+        "designer|commentHeader": "comment",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyContainer",
+    "designerId": "63f7cbe3-7370-4e21-ac5b-d61fe59ffde6",
+    "viewControllerInstanceId": "2782f9f0-465b-4eb5-98b0-76e35cbd2f70",
+    "viewModelInstanceId": "189841cb-35db-4ef7-a0e9-105c74ac2b18",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "src": [
+                    "{record.picture}"
+                ],
+                "userCls": [
+                    "picture"
+                ]
+            },
+            "configAlternates": {
+                "src": "binding",
+                "userCls": "typedarray"
+            },
+            "name": "MyImg",
+            "designerId": "b9dd2998-2135-4418-9732-ecdb04c93f12"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Person Info",
+                "record": [
+                    "{record}"
+                ],
+                "userCls": [
+                    "person-info"
+                ]
+            },
+            "configAlternates": {
+                "record": "binding",
+                "designer|displayName": "string",
+                "userCls": "typedarray"
+            },
+            "name": "MyComponent1",
+            "designerId": "00d3bb43-8dca-489d-891d-b20e28f9a43a",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "record",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<div class=\"person-name\">{firstname} <b>{lastname}</b></div>",
+                            "<div class=\"person-title\">{title}</div>"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "tpl",
+                    "designerId": "b90281b6-16c5-4452-921c-28364f2b3c41"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Menu Container",
+                "layout": "hbox",
+                "userCls": [
+                    "person-tools"
+                ]
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "layout": "string",
+                "userCls": "typedarray"
+            },
+            "name": "MyContainer",
+            "designerId": "0941d459-29f3-4957-b7dd-c1ce6a3516c5",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "action-phone",
+                        "iconCls": "x-fa fa-phone",
+                        "tooltip": [
+                            "Call <b>{record.phone}</b>"
+                        ],
+                        "ui": "action-phone"
+                    },
+                    "configAlternates": {
+                        "tooltip": "binding",
+                        "designer|uiInterfaceName": "string",
+                        "iconCls": "string",
+                        "ui": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "543f00af-26c0-4c7c-a07e-975b91218517",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCallTap",
+                                "implHandler": [
+                                    "var vm = this.getViewModel(),",
+                                    "    record = vm.get('record');",
+                                    "",
+                                    "location = 'tel:' + record.get('email');"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onCallTap",
+                            "designerId": "eac3c34a-59f7-42a8-a3de-dbaf36d2f62f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "action-skype",
+                        "iconCls": "x-fa fa-skype",
+                        "tooltip": [
+                            "Skype with <b>{record.skype}</b>"
+                        ],
+                        "ui": "action-skype"
+                    },
+                    "configAlternates": {
+                        "tooltip": "binding",
+                        "designer|uiInterfaceName": "string",
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "ui": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "e8d75448-69e0-40be-8600-6721c5449a9f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSkypeTap",
+                                "implHandler": [
+                                    "var vm = this.getViewModel(),",
+                                    "    record = vm.get('record');",
+                                    "",
+                                    "location = 'skype:' + record.get('skype') + '?call';"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onSkypeTap",
+                            "designerId": "f7b9d9a3-d22d-4496-a9ee-85dde2839904"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "action-email",
+                        "iconCls": "x-fa fa-envelope",
+                        "tooltip": [
+                            "Send email to <b>{record.email}</b>"
+                        ],
+                        "ui": "action-email"
+                    },
+                    "configAlternates": {
+                        "tooltip": "binding",
+                        "designer|uiInterfaceName": "string",
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "ui": "string"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "b7b7be92-0978-4cb1-9538-836a81da3cff",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onEmailTap",
+                                "implHandler": [
+                                    "",
+                                    "var vm = this.getViewModel(),",
+                                    "    record = vm.get('record');",
+                                    "",
+                                    "location = 'mailto:' + record.get('email');"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onEmailTap",
+                            "designerId": "0ad52da6-97e6-4d7a-aeb4-16625757bb4e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "action-linkedin",
+                        "iconCls": "x-fa fa-linkedin",
+                        "tooltip": [
+                            "See <b>{record.linkedin}</b> LinkedIn profile"
+                        ],
+                        "ui": "action-linkedin"
+                    },
+                    "configAlternates": {
+                        "tooltip": "binding",
+                        "designer|uiInterfaceName": "string",
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "ui": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "8c5bb717-ea3d-451e-a9e4-2d7a5abc2314",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLinkedInTap",
+                                "implHandler": [
+                                    "var vm = this.getViewModel(),",
+                                    "    record = vm.get('record');",
+                                    "",
+                                    "window.open('https://www.linkedin.com/in/' + record.get('linkedin'), '_blank');"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onLinkedInTap",
+                            "designerId": "49e584dd-91c4-4bb0-a68e-77d15c3e1516"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Person extra",
+                "flex": "1",
+                "record": [
+                    "{record}"
+                ],
+                "userCls": [
+                    "person-extra"
+                ]
+            },
+            "configAlternates": {
+                "record": "binding",
+                "designer|displayName": "string",
+                "flex": "string",
+                "userCls": "typedarray"
+            },
+            "name": "MyComponent2",
+            "designerId": "c25d86e6-0a57-4632-b941-cc867ac48e40",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "flex",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "record",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<div class=\"person-city\"><i class=\"fa fa-map-marker\"></i> {office.city}</div>",
+                            "<div class=\"person-time\"><i class=\"fa fa-clock-o\"></i> 11:00 pm</div>"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "tpl",
+                    "designerId": "51f8096b-8c58-4476-bdb2-51b2f5257c36"
+                }
+            ]
+        }
+    ]
+}

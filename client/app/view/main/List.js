@@ -40,7 +40,7 @@ Ext.define('PWA.view.main.List', {
     },
 
     listeners: {
-        itemtap: 'onItemSelected'
+        childtap: 'onItemSelected'
     },
 
     itemTpl: '<div class="item-wrapper">' +

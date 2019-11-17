@@ -1,0 +1,136 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|commentHeader": [
+            "TODO: The url in the class:",
+            "",
+            "",
+            "// @sw-cache { urlPattern: \"\\\\/portraits\\\\/.*\", handler: \"networkFirst\", options: { cache: { name: \"images\", maxEntries: 100 } } }",
+            "// @sw-cache { handler: \"networkFirst\", options: { cache: { name: \"api\" } } }",
+            "       ",
+            ""
+        ],
+        "designer|userAlias": "personnel",
+        "designer|userClassName": "Personnel",
+        "model": "Person",
+        "storeId": "Personnel"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "designer|commentHeader": "comment",
+        "designer|userAlias": "string",
+        "autoLoad": "boolean"
+    },
+    "name": "MyStore",
+    "designerId": "c602e908-1801-4d1c-9f54-f52e3d516dd2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/personnel.json"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "779c4c1a-16b1-4c4d-ae97-45360c6d41c3",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader",
+                    "designerId": "91b992e9-ceaa-4f77-a0cc-a348b6ca3a30"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyGrouper",
+            "designerId": "e2c44418-b6a0-41e8-9412-443f30152ed2",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "groupFn",
+                        "implHandler": [
+                            " return item.get('lastname')[0];"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "groupFn",
+                    "designerId": "4c74d5e0-edc1-4c99-ac1e-b58480dfcb67"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Last Name Sorter",
+                "property": "latname"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "property": "string"
+            },
+            "name": "MySorter",
+            "designerId": "a7ce52dc-0fb7-48af-9011-4542c0f35cd9"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "First Name Sorter",
+                "property": "firstname"
+            },
+            "configAlternates": {
+                "property": "string",
+                "designer|displayName": "string"
+            },
+            "name": "MySorter1",
+            "designerId": "7aa683ff-6a89-4b99-a4b6-cb90fc69e8b5"
+        }
+    ]
+}
